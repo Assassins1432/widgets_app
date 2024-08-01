@@ -22,13 +22,31 @@ class AppTheme {
         assert(selectedColor < colorList.length,
             'selectedColor must be less or equal than ${colorList.length - 1}');
 
-  ThemeData getTheme() => ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: colorList[selectedColor],
-        appBarTheme: const AppBarTheme(
-          centerTitle: false,
-          backgroundColor: Colors.green,
-          foregroundColor: Colors.black,
+  bool isDarkColor(Color color) {
+    double darkness = 1 -
+        (0.299 * color.red + 0.587 * color.green + 0.114 * color.blue) / 255;
+    return darkness >= 0.5;
+  }
+
+  ThemeData getTheme() {
+    final Color selectedColorValue = colorList[selectedColor];
+    final bool isDark = isDarkColor(selectedColorValue);
+
+    return ThemeData(
+      useMaterial3: true,
+      colorSchemeSeed: selectedColorValue,
+      splashColor: selectedColorValue,
+      appBarTheme: AppBarTheme(
+        centerTitle: false,
+        color: selectedColorValue,
+        titleTextStyle: TextStyle(
+          color: isDark ? Colors.white : Colors.black,
+          fontSize: 20,
         ),
-      );
+        iconTheme: IconThemeData(
+          color: isDark ? Colors.white : Colors.black,
+        ),
+      ),
+    );
+  }
 }
