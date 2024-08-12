@@ -28,9 +28,9 @@ const appMenuItems = <MenuItem>[
     icon: Icons.credit_card,
   ),
   MenuItem(
-    title: 'Contact',
-    subTitle: 'Contact Page',
-    link: '/contact',
-    icon: Icons.contact_page,
+    title: 'Progress Indicator',
+    subTitle: 'Generales y Controlados',
+    link: '/progress',
+    icon: Icons.refresh_rounded,
   ),
 ];
