@@ -114,5 +114,26 @@ final appRouter = GoRouter(
         );
       },
     ),
+    GoRoute(
+      path: '/ui-controls',
+      name: UiControlsScreen.routeName,
+      builder: (context, state) {
+        return const UiControlsScreen();
+      },
+      pageBuilder: (context, state) {
+        return CustomTransitionPage(
+          key: state.pageKey,
+          child: const UiControlsScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return SlideTransition(
+              position:
+                  Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
+                      .animate(animation),
+              child: child,
+            );
+          },
+        );
+      },
+    ),
   ],
 );
