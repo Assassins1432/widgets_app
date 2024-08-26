@@ -24,9 +24,7 @@ final appRouter = GoRouter(
           child: const ButtonsScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return SlideTransition(
-              position:
-                  Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
-                      .animate(animation),
+              position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(animation),
               child: child,
             );
           },
@@ -44,8 +42,7 @@ final appRouter = GoRouter(
         child: const CardsScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           return SlideTransition(
-            position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
-                .animate(animation),
+            position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(animation),
             child: child,
           );
         },
@@ -63,9 +60,7 @@ final appRouter = GoRouter(
           child: const ProgressScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return SlideTransition(
-              position:
-                  Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
-                      .animate(animation),
+              position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(animation),
               child: child,
             );
           },
@@ -84,9 +79,7 @@ final appRouter = GoRouter(
           child: const SnackbarScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return SlideTransition(
-              position:
-                  Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
-                      .animate(animation),
+              position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(animation),
               child: child,
             );
           },
@@ -105,9 +98,7 @@ final appRouter = GoRouter(
           child: const AnimatedScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return SlideTransition(
-              position:
-                  Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
-                      .animate(animation),
+              position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(animation),
               child: child,
             );
           },
@@ -126,9 +117,7 @@ final appRouter = GoRouter(
           child: const UiControlsScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return SlideTransition(
-              position:
-                  Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
-                      .animate(animation),
+              position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(animation),
               child: child,
             );
           },
@@ -147,9 +136,7 @@ final appRouter = GoRouter(
           child: const AppTutorialScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return SlideTransition(
-              position:
-                  Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
-                      .animate(animation),
+              position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(animation),
               child: child,
             );
           },
@@ -168,9 +155,26 @@ final appRouter = GoRouter(
           child: const InfiniteScrollScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return SlideTransition(
-              position:
-                  Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
-                      .animate(animation),
+              position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(animation),
+              child: child,
+            );
+          },
+        );
+      },
+    ),
+    GoRoute(
+      path: '/cont',
+      name: CounterScreen.routeName,
+      builder: (context, state) {
+        return const CounterScreen();
+      },
+      pageBuilder: (context, state) {
+        return CustomTransitionPage(
+          key: state.pageKey,
+          child: const CounterScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return SlideTransition(
+              position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(animation),
               child: child,
             );
           },

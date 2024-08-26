@@ -63,4 +63,10 @@ const appMenuItems = <MenuItem>[
     link: '/infinite',
     icon: Icons.list_rounded,
   ),
+  MenuItem(
+    title: 'Contador',
+    subTitle: 'Un contador simple',
+    link: '/cont',
+    icon: Icons.add_circle_outline,
+  ),
 ];
